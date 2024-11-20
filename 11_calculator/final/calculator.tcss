@@ -1,0 +1,27 @@
+Screen {
+    layout: grid;
+    grid-size: 4 7;
+}
+
+#solution {
+    text-align: right;
+    column-span: 4;
+    width: 1fr;
+    border: solid blue;
+}
+
+#total {
+    width: 1fr;
+    column-span: 4;
+}
+
+#clear {
+    width: 1fr;
+    column-span: 4;
+}
+
+Button {
+    height: 5;
+    width: 1fr;
+    border: solid yellow;
+}

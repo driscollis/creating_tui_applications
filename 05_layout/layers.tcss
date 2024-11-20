@@ -1,0 +1,22 @@
+Screen {
+    layout: grid;
+    grid-size: 2 3;
+    layers: one two;
+}
+
+Button {
+    height: 1fr;
+    width: 1fr;
+    border: solid yellow;
+}
+
+#btn_one {
+    layer: one;
+    background: green;
+}
+
+#btn_two {
+    layer: two;
+    background: red;
+    offset: 12 6;
+}

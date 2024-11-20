@@ -1,0 +1,11 @@
+Screen {
+    layout: grid;
+    grid-size: 2 3;
+    grid-rows: 50% 25% 25%;
+}
+
+Button {
+    height: 1fr;
+    width: 1fr;
+    border: solid yellow;
+}

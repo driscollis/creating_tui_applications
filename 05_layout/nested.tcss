@@ -1,0 +1,7 @@
+Button {
+    content-align: center middle;
+    background: green;
+    border: yellow;
+    height: 1fr;
+    width: 1fr;
+}

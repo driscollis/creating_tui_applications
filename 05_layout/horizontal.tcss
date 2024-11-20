@@ -1,0 +1,10 @@
+Screen {
+    layout: horizontal;
+}
+
+Button {
+    height: 100%;
+    color: yellow;
+    background: red;
+    border: solid green;
+}
