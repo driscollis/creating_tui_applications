@@ -1,0 +1,25 @@
+PrecommitApp {
+
+    #vertical {
+        background: $background-lighten-1;
+    }
+
+    #config_path {
+        border: round red;
+    }
+
+    #config_data {
+        border: round green;
+    }
+
+    Button {
+        background: $background-lighten-3;
+        width: 30;
+        margin: 1;
+    }
+
+    Horizontal {
+            align: center middle;
+            height: auto;
+    }
+}

@@ -1,0 +1,47 @@
+ID3Editor {
+
+    Input {
+        margin: 1;
+        border: heavy yellow;
+    }
+
+    Label {
+        margin: 1;
+    }
+
+    Button {
+        column-span: 2;
+        width: 100%;
+        margin: 1;
+        background: green;
+    }
+}
+
+
+
+WarningScreen {
+    align: center middle;
+    background: $primary 30%;
+
+    #warning_dialog{
+        width: 60;
+        height: 11;
+        border: thick blue 70%;
+        background: $surface;
+        grid-size: 2;
+    }
+
+    #warning_msg {
+        column-span: 2;
+        height: 1fr;
+        width: 1fr;
+        content-align: center middle;
+    }
+
+    Button {
+        column-span: 2;
+        width: 1fr;
+        margin: 1;
+    }
+
+}
