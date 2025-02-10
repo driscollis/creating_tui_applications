@@ -9,7 +9,7 @@ Book release date: **1st quarter 2025**
 Order on the following websites:
 
  - [Leanpub](https://leanpub.com/textual)
- - [Gumroad](https://driscollis.gumroad.com/l/openpyxl)
+ - [Gumroad](https://driscollis.gumroad.com/l/textual)
  - Amazon - Coming soon!
 
 ## About the Book
