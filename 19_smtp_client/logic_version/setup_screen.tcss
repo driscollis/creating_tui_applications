@@ -1,0 +1,21 @@
+SetupScreen {
+    align: center middle;
+    background: $primary-darken-1 30%;
+
+    #smtp_dialog {
+        content-align: center middle;
+        width: 40%;
+        height: 42%;
+        border: thick black 70%;
+    }
+
+    Input {
+        border: round blue;
+    }
+
+    Button {
+        height: 3;
+        width: 1fr;
+        margin: 1;
+    }
+}

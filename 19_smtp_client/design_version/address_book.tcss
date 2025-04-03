@@ -1,0 +1,15 @@
+AddressBook {
+    #horizontal_buttons {
+        height: auto;
+        align: center middle;
+    }
+
+    Button {
+        margin: 1;
+    }
+
+    DataTable {
+        margin: 1;
+        border: solid gold;
+    }
+}
