@@ -1,0 +1,17 @@
+#rss_grid {
+    layout: grid;
+    grid-size: 3 1;
+    grid-columns: 20% 20% 60%;
+}
+
+#feeds {
+    border: solid blue;
+}
+
+#articles {
+    border: solid green;
+}
+
+#article {
+    border: solid yellow;
+}
