@@ -1,0 +1,10 @@
+#playlist {
+    height: 80%;
+    border: heavy green;
+}
+
+#player-buttons {
+    border: wide white;
+    width: auto;
+    height: auto;
+}
