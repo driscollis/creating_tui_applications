@@ -1,9 +1,0 @@
-#number_buttons {
-    dock: top;
-    height: auto;
-
-}
-
-Button {
-    border: solid yellow;
-}
