@@ -1,0 +1,12 @@
+
+Input {
+    margin: 1;
+    border: heavy yellow;
+}
+
+Button {
+    column-span: 2;
+    width: 100%;
+    margin: 1;
+    background: green;
+}
