@@ -1,0 +1,16 @@
+Screen {
+    layout: grid;
+    grid-size: 3 3;
+}
+
+#one {
+    column-span: 2;
+    row-span: 2;
+    tint: blue 40%;
+}
+
+Button {
+    height: 1fr;
+    width: 1fr;
+    border: solid yellow;
+}

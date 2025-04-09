@@ -1,0 +1,9 @@
+Screen {
+    layout: vertical;
+}
+
+Button {
+    width: 100%;
+    color: yellow;
+    background: red;
+}

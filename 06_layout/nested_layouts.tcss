@@ -1,0 +1,20 @@
+/* nested_layouts.tcss */
+#two-column {
+    layout: grid;
+    grid-size: 2;
+    grid-gutter: 1;
+}
+
+#left {
+    background: $boost;
+    color: auto;
+    margin-bottom: 1;
+    padding: 1;
+    border: blue;
+}
+
+#right {
+    background: $panel;
+    background: purple;
+    border: greenyellow;
+}

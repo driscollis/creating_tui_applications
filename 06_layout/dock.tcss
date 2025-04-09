@@ -1,0 +1,13 @@
+#sidebar {
+    dock: left;
+    width: 20;
+    height: 100%;
+    color: white;
+    background: red;
+}
+
+Button {
+    height: 50%;
+    width: 1fr;
+    border: solid yellow;
+}
