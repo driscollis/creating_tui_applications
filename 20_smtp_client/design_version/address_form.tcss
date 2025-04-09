@@ -1,0 +1,14 @@
+AddressForm {
+    Input {
+        border: solid yellow;
+    }
+
+    #address_form_buttons {
+        height: auto;
+        align: center middle;
+    }
+
+    Button {
+        margin: 1;
+    }
+}
