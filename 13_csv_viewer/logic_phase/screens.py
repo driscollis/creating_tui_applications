@@ -75,3 +75,4 @@ class FileBrowser(Screen):
             return
 
         self.post_message(self.Selected("selected"))
+        self.dismiss()

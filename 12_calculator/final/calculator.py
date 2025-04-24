@@ -12,8 +12,8 @@ class Calculator(App):
         super().__init__()
         self.solution = "0"
         self.last_button_pressed = None
-        self.operators = ["+", "-", "*", "/"]
-        self.special_keys = ["=", "Clear"]
+        self.operators = {"+", "-", "*", "/"}
+        self.special_keys = {"=", "Clear"}
 
     def compose(self) -> ComposeResult:
         yield Label(self.solution, id="solution")

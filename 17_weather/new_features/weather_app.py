@@ -50,7 +50,7 @@ class Weather(HorizontalGroup):
         self.temp_unit = temp_unit  # Fahrenheit or Celsius
 
         # Update the weather once every hour
-        self.set_interval(3600, self.update_weather)
+        self.timer = self.set_interval(3600, self.update_weather)
 
     def compose(self) -> ComposeResult:
         yield Vertical(

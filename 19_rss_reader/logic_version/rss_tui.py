@@ -10,7 +10,7 @@ from textual import on, work
 from textual.app import App, ComposeResult
 from textual.containers import Grid
 from textual.widgets import Header, Footer, Markdown, OptionList
-from textual.widgets.option_list import Option, Separator
+from textual.widgets.option_list import Option
 from textual.worker import get_current_worker
 
 from rss_feed_entry_dialog import RSSFeedEntryDialog
@@ -70,7 +70,8 @@ class RSSViewerApp(App):
     @work(exclusive=True, thread=True, group="add_feed")
     def add_new_feed(self, feed_url: str) -> None:
         feed_obj = feedparser.parse(feed_url)
-        self.feed_objects[feed_obj.feed.title] = {article.title: article for article in feed_obj.entries}
+        self.feed_objects[feed_obj.feed.title] = {article.title: article for article
+                                                  in feed_obj.entries}
         self.current_feed_title = feed_obj.feed.title
 
         if self.feed_titles == ["No Feeds Found"]:
@@ -85,7 +86,8 @@ class RSSViewerApp(App):
             self.call_from_thread(self._add_articles, self.feed_objects[feed_obj.feed.title])
 
             # TODO - Put in an exception handler
-            self.current_article = self.feed_objects[self.current_feed_title][feed_obj.entries[0].title]
+            entry_title = feed_obj.entries[0].title
+            self.current_article = self.feed_objects[self.current_feed_title][entry_title]
             self.call_from_thread(self.update_reader)
 
 
@@ -94,7 +96,7 @@ class RSSViewerApp(App):
         Add a new feed title and a separator
         """
         self.feeds.add_option(feed_title)
-        self.feeds.add_option(Separator())
+        self.feeds.add_option(None)
 
     def _add_articles(self, article_titles: list[str]) -> None:
         """
@@ -102,7 +104,7 @@ class RSSViewerApp(App):
         """
         for title in article_titles:
             self.articles.add_option(Option(title))
-            self.articles.add_option(Separator())
+            self.articles.add_option(None)
 
     def update_reader(self) -> None:
         viewer = self.query_one("#article", Markdown)
@@ -112,12 +114,16 @@ class RSSViewerApp(App):
 
     @on(OptionList.OptionSelected, "#articles")
     def on_article_selected(self, event: OptionList.OptionSelected) -> None:
+        if self.current_feed_title == "No Feeds Found" or self.current_feed_title == "":
+            return
         self.current_article = self.feed_objects[self.current_feed_title][event.option.prompt]
         self.update_reader()
 
     @on(OptionList.OptionSelected, "#feeds")
     def on_feed_selected(self, event: OptionList.OptionSelected) -> None:
         self.current_feed_title = event.option.prompt
+        if self.current_feed_title == "No Feeds Found":
+            return
         self.articles.clear_options()
         self._add_articles(self.feed_objects[self.current_feed_title])
         for title in self.feed_objects[self.current_feed_title]:

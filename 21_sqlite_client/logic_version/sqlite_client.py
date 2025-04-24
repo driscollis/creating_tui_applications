@@ -69,11 +69,14 @@ class SQLiteClientApp(App):
             return
 
         tabbed_content = self.query_one("#tabbed_ui", TabbedContent)
-        self.execute_sql_pane = ExecuteSQLPane(db_file_path, title="Execute SQL", id="run_sql")
+        self.execute_sql_pane = ExecuteSQLPane(
+            db_file_path, title="Execute SQL", id="run_sql")
         await tabbed_content.clear_panes()
 
-        await tabbed_content.add_pane(DatabaseStructurePane(db_file_path, title="Database Structure", id="db_structure"))
-        await tabbed_content.add_pane(TableViewerPane(db_file_path, title="Browse Data", id="table_viewer"))
+        await tabbed_content.add_pane(DatabaseStructurePane(
+            db_file_path, title="Database Structure", id="db_structure"))
+        await tabbed_content.add_pane(TableViewerPane(
+            db_file_path, title="Browse Data", id="table_viewer"))
         await tabbed_content.add_pane(self.execute_sql_pane)
         tabbed_content.active = "db_structure"
         self.title = f"Squall - {db_file_path}"

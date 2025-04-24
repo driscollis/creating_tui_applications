@@ -9,7 +9,7 @@ class ContentColorsApp(App):
         yield Label("[#FF0000]This is red text[/]")
         yield Label("[rgba(255, 255, 0, 1)]This is yellow text[/]")
         yield Label("[cyan]A vibrant greenish-blue[/]")
-        yield Label("[rgba(50, 168, 160, 0.5)]A blue green color with alpha")
+        yield Label("[rgba(50, 168, 160, 0.5)]A blue green color with alpha[/]")
 
 
 if __name__ == "__main__":

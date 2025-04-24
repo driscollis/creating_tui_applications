@@ -4,7 +4,7 @@ import eyed3
 import pathlib
 
 
-def get_mp3(path: pathlib.Path) -> eyed3.AudioFile | None:
+def get_mp3(path: pathlib.Path) -> tuple:
     mp3 = eyed3.load(str(path))
     track_num = mp3.tag.track_num.count
     title = mp3.tag.title

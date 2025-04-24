@@ -13,9 +13,8 @@ class QueryApp(App):
         yield Button("Three")
 
     def on_button_pressed(self) -> None:
-        widgets = self.query("Button")
         s = ""
-        for widget in widgets:
+        for widget in self.query("Button"):
             s += f"{widget}\n"
         label = self.query_one("#label")
         label.update(s)

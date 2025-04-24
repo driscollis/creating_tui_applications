@@ -71,7 +71,7 @@ class FileBrowser(Screen):
         event.stop()
         parsable_file_types = [".csv", ".xslx"]
 
-        if self.selected_file.suffix.lower() in parsable_file_types:
+        if self.selected_file.suffix.lower() not in parsable_file_types:
             self.app.push_screen(WarningScreen("ERROR: You must choose a CSV or Excel file!"))
             return
 

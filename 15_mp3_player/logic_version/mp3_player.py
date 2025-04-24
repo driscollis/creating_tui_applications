@@ -30,7 +30,8 @@ class MP3Player(App):
         self.current_track = ""
         self.id3 = None
         self.player = None
-        self.mp3_data = [("No Music Found", "", ""), ("Press CTRL+L to load music files", "", "")]
+        self.mp3_data = [("No Music Found", "", ""),
+                         ("Press CTRL+L to load music files", "", "")]
         self.app_selected_file = pathlib.Path("")
         self.current_track_index = 1
 
@@ -129,7 +130,10 @@ class MP3Player(App):
 
     @on(DirectoryTree.FileSelected)
     @on(DirectoryTree.DirectorySelected)
-    def on_file_selection(self, event: DirectoryTree.FileSelected) -> None:
+    def on_file_selection(
+        self,
+        event: DirectoryTree.FileSelected | DirectoryTree.DirectorySelected
+        ) -> None:
         """
         Called when the FileSelected message is emitted from the DirectoryTree
         """

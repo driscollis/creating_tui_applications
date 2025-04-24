@@ -77,8 +77,6 @@ class ViewerApp(App):
         """
         Message handler - Called when a custom message is posted from FileBrowser
         """
-        self.app.pop_screen()
-
         # Parse the file
         rows = data_processor.process_csv(self.app_selected_file)
 

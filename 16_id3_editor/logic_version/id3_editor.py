@@ -7,7 +7,7 @@ import pathlib
 from textual import on
 from textual.app import App, ComposeResult
 from textual.containers import Vertical
-from textual.screen import Screen
+from textual.screen import ModalScreen
 from textual.widgets import Button, DirectoryTree, Input, Label
 from textual.widgets import Footer, Header
 
@@ -68,7 +68,7 @@ class ID3Editor(App):
             self.query_one("#number", Input).value = str(mp3.tag.track_num.count)
 
 
-class WarningScreen(Screen):
+class WarningScreen(ModalScreen):
     """
     Creates a pop-up Screen that displays a warning message to the user
     """
@@ -94,7 +94,8 @@ class WarningScreen(Screen):
         self.dismiss()
         event.stop()
 
-class FileBrowser(Screen):
+
+class FileBrowser(ModalScreen):
 
     def __init__(self) -> None:
         super().__init__()
@@ -120,7 +121,9 @@ class FileBrowser(Screen):
         """
         event.stop()
 
-        if self.selected_file.suffix.lower() != ".mp3" and self.selected_file.is_file():
+        if (self.selected_file.is_file() and
+            self.selected_file.suffix.lower() != ".mp3"
+            ):
             self.app.push_screen(WarningScreen("ERROR: You must choose a MP3 file!"))
             return
 

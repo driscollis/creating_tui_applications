@@ -41,8 +41,8 @@ class Calculator(App):
 
     @on(Button.Pressed)
     def on_update_equation(self, event: Button.Pressed) -> None:
-        operators = ["+", "-", "*", "/"]
-        special_keys = ["=", "Clear"]
+        operators = {"+", "-", "*", "/"}
+        special_keys = {"=", "Clear"}
         current_equation = self.solution
         label = str(event.button.label)
 

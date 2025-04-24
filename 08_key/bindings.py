@@ -15,10 +15,10 @@ class BindingApp(App):
     def compose(self) -> ComposeResult:
         yield Footer()
 
-    def action_add_button(self, color: str) -> None:
+    async def action_add_button(self, color: str) -> None:
         button = Button(color)
         button.styles.background = Color.parse(color)
-        self.mount(button)
+        await self.mount(button)
         self.call_after_refresh(self.screen.scroll_end, animate=False)
 
     def action_esc(self) -> None:
