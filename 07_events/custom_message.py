@@ -25,7 +25,7 @@ class FileBrowser(Screen):
 
     def compose(self) -> ComposeResult:
         yield Label("Load a File")
-        yield DirectoryTree("c:/")
+        yield DirectoryTree("/")
         yield Button("Load File")
 
     @on(DirectoryTree.FileSelected)

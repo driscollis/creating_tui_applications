@@ -10,7 +10,7 @@ class WelcomeButton(App):
         yield Button("Exit")
 
     def on_button_pressed(self) -> None:
-        self.mount(Button("Other"))
+        self.mount(Button("More"))
 
 
 if __name__ == "__main__":

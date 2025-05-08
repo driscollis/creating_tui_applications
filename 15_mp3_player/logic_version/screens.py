@@ -54,7 +54,7 @@ class FileBrowser(Screen):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield DirectoryTree("c:/")
+        yield DirectoryTree("/")
         yield Button("Load Folder", variant="primary", id="load_file")
         yield Footer()
 

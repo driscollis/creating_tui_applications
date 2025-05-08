@@ -53,7 +53,7 @@ class FileBrowser(Screen):
 
     def compose(self) -> ComposeResult:
         yield Label("Load Excel File   (Ex. JenkinsNode.xslx)")
-        yield DirectoryTree("c:/")
+        yield DirectoryTree("/")
         yield Button("Load File", variant="primary", id="load_file")
         yield Footer()
 

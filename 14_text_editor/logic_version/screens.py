@@ -54,7 +54,7 @@ class SaveFileDialog(Screen):
     def __init__(self) -> None:
         super().__init__()
         self.title = "Save File"
-        self.root = "c:/"
+        self.root = "/"
 
     def compose(self) -> ComposeResult:
         yield Header()

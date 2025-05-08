@@ -52,7 +52,7 @@ class AliceApp(App):
     def action_request_name(self) -> None:
         """Action to display the name dialog."""
 
-        def ok_callback(name: bool | str| None) -> None:
+        def ok_callback(name: bool | str) -> None:
             if isinstance(name, str):
                 self.query_one(Static).update(f"Hello {name}")
 
