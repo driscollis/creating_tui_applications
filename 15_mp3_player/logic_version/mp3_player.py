@@ -126,7 +126,10 @@ class MP3Player(App):
         table.cursor_type = "row"
         table.border_title = "Playlist"
 
-        self.current_track =  self.mp3_data[1][-1]
+        if len(self.mp3_data) > 1:
+            self.current_track =  self.mp3_data[1][-1]
+        else:
+            self.current_track = self.mp3_data[0]
 
     @on(DirectoryTree.FileSelected)
     @on(DirectoryTree.DirectorySelected)

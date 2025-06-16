@@ -4,6 +4,8 @@ import pathlib
 import subprocess
 import textwrap
 
+from pre_commit.commands.sample_config import SAMPLE_CONFIG
+
 from textual import on, work
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, Vertical
@@ -11,6 +13,7 @@ from textual.widgets import Button, Input
 from textual.widgets import RichLog
 
 from screens import EditScreen, WarningScreen
+
 
 
 class PrecommitApp(App):
@@ -85,21 +88,8 @@ class PrecommitApp(App):
         """
         Create a simple sample config in the current working directory
         """
-        sample_config = """
-        # See https://pre-commit.com for more information
-        # See https://pre-commit.com/hooks.html for more hooks
-        repos:
-        -   repo: https://github.com/pre-commit/pre-commit-hooks
-            rev: v3.2.0
-            hooks:
-            -   id: trailing-whitespace
-            -   id: end-of-file-fixer
-            -   id: check-yaml
-            -   id: check-added-large-files
-        """
         sample_config_path = pathlib.Path.cwd() / ".pre-commit-config.yaml"
-        with open(sample_config_path, "w") as config:
-            config.write(textwrap.dedent(sample_config))
+        sample_config_path.write_text(SAMPLE_CONFIG)
         self.notify(f"Sample config written to {sample_config_path}")
         self.query_one("#config_path").value = str(sample_config_path)
         self.config = sample_config_path

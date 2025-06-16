@@ -69,6 +69,10 @@ class RSSViewerApp(App):
 
     @work(exclusive=True, thread=True, group="add_feed")
     def add_new_feed(self, feed_url: str) -> None:
+        if "http" not in feed_url:
+            self.notify(
+                "Error: Malformed URL requires https", title="URL Error", severity="error")
+            return
         feed_obj = feedparser.parse(feed_url)
         self.feed_objects[feed_obj.feed.title] = {article.title: article for article
                                                   in feed_obj.entries}

@@ -55,7 +55,7 @@ class FileBrowser(Screen):
     def compose(self) -> ComposeResult:
         yield Header()
         yield DirectoryTree("/")
-        yield Button("Load Folder", variant="primary", id="load_file")
+        yield Button("Load File", variant="primary", id="load_file")
         yield Footer()
 
     @on(DirectoryTree.FileSelected)

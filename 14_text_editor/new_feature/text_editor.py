@@ -24,8 +24,8 @@ class TextViewerApp(App[None]):
         super().__init__()
         self.args = cli_args
         self.current_path = Path(self.args.filepath).absolute()
-        self.app_selected_file = Path("")
-        self.file_changed = False
+        self.app_selected_directory = Path("")
+        self.text_changed = False
         try:
             with open(self.current_path) as fh:
                 self.data = fh.read()
@@ -67,7 +67,7 @@ class TextViewerApp(App[None]):
             else:
                 self.app.exit()
 
-        if self.file_changed:
+        if self.text_changed:
             # Alert user that file has changed and they should save
             self.push_screen(WarningScreen("Do you want to save your changes?"), confirmation_callback)
         else:
@@ -95,14 +95,14 @@ class TextViewerApp(App[None]):
         """
         Called when the DirectorySelected message is emitted from the DirectoryTree
         """
-        self.app_selected_file = event.path
+        self.app_selected_directory = event.path
 
     @on(TextArea.Changed)
-    def on_file_changed(self) -> None:
+    def on_text_changed(self) -> None:
         """
         If the user changes the file in any way, this method gets called
         """
-        self.file_changed = True
+        self.text_changed = True
         self.title = f"*Editing: {self.current_path}"
 
     def on_save_file_dialog_selected(self, message: SaveFileDialog.Selected) -> None:
@@ -112,12 +112,12 @@ class TextViewerApp(App[None]):
         Saves the file
         """
         self.app.pop_screen()
-        self.file_changed = False
-        path = self.app_selected_file / message.filename
+        path = self.app_selected_directory / message.filename
         self.log.info(f"SAVING FILE TO {path}")
         text = self.query_one(TextArea).text
         with open(path, "w") as file:
             file.write(text)
+            self.text_changed = False
         self.title = f"Saved: {self.current_path}"
 
 

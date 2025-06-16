@@ -79,7 +79,7 @@ class WarningScreen(ModalScreen):
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         """
-        Event handler for when the OK button - dismisses the screen
+        Event handler for when a button is pressed - dismisses the screen
         """
         if event.button.id == "yes":
             self.dismiss(True)

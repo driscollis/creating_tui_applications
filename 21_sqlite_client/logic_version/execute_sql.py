@@ -32,7 +32,7 @@ class ExecuteSQLPane(TabPane):
 
     def on_mount(self) -> None:
         table = self.query_one(DataTable)
-        data = [("No", "Data", "Loaded"), ("", "", "")]
+        data = [("No", "Query", "Loaded"), ("", "", "")]
         table.add_columns(*data[0])
         table.add_rows(data[1:])
         table.cursor_type = "row"
