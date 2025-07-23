@@ -1,0 +1,5 @@
+eyed3==0.9.7
+pgeocode==0.5.0
+python-vlc==3.0.21203
+SQLAlchemy==2.0.36
+textual==4.0.0
