@@ -12,7 +12,7 @@ Order on the following websites:
 
  - [Leanpub](https://leanpub.com/textual)
  - [Gumroad](https://driscollis.gumroad.com/l/textual)
- - Amazon - Coming soon!
+ - [Amazon ](https://www.amazon.com/dp/B0FGDNC3H6)
 
 ## About the Book
 
