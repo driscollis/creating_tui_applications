@@ -16,7 +16,9 @@ class ButtonEvents(App):
         """
         Called when the "Toggle Dark Mode" button is pressed
         """
-        self.dark = not self.dark
+        self.theme = (
+            "textual-dark" if self.theme == "textual-light" else "textual-light"
+            )
 
     @on(Button.Pressed, "#exit")
     def quit_app(self):

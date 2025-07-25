@@ -14,7 +14,9 @@ class ButtonEvents(App):
         if event.button.id == "exit":
             self.exit()
         elif event.button.has_class("dark", "mode"):
-            self.dark = not self.dark
+            self.theme = (
+                "textual-dark" if self.theme == "textual-light" else "textual-light"
+            )
 
 
 if __name__ == "__main__":
