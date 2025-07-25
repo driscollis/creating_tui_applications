@@ -2,6 +2,8 @@
 
 <a href="https://leanpub.com/textual"><img src="https://www.blog.pythonlibrary.org/wp-content/uploads/2025/02/textual_thumb.jpg" alt="Creating TUI Applications with Textual and Python" align="right"></a>
 
+[![Framework: Textual](https://img.shields.io/badge/framework-Textual-5967FF?logo=python)](https://www.textualize.io/)
+
 Code for the book, **Creating TUI Applications with Textual and Python** by Michael Driscoll
 
 Book release date: **1st quarter 2025**
@@ -10,7 +12,7 @@ Order on the following websites:
 
  - [Leanpub](https://leanpub.com/textual)
  - [Gumroad](https://driscollis.gumroad.com/l/textual)
- - Amazon - Coming soon!
+ - [Amazon ](https://www.amazon.com/dp/B0FGDNC3H6)
 
 ## About the Book
 
